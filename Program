@@ -7,14 +7,15 @@ print("Welcome to the Guessing Game! You have 3 chances to guess the Secret Word
 while guess != secret_word and guess_count < guess_limit:
     guess = input("Enter a guess: ")
     guess_count += 1
-    if guess_count == 1 and guess != secret_word:
-        print("Wrong guess, try again. 2 chances left")
-    if guess_count == 2 and guess != secret_word:
-        print("Wrong guess, try again. 1 chance left")
+    remaining_guess_count = guess_limit - guess_count
+    if guess != secret_word and remaining_guess_count!=0 and remaining_guess_count!=1:
+        print("Wrong guess, try again. " + str(remaining_guess_count) + " chances left")
+    if guess != secret_word and remaining_guess_count == 1:
+        print("Wrong guess, try again. " + str(remaining_guess_count) + " chance left")
 
-# The user has lost the game:
-if guess_count == 3 and guess != secret_word:
-    print("Out of guesses. You lose!")
 # The user has won the game:
-elif guess == secret_word:
+if guess == secret_word:
     print("You guessed the secret word! You win!")
+# The user has lost the game:
+elif guess_count == guess_limit and guess != secret_word:
+    print("Out of guesses. You lose!")
