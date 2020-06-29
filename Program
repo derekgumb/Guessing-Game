@@ -8,8 +8,10 @@ while guess != secret_word and guess_count < guess_limit:
     guess = input("Enter a guess: ")
     guess_count += 1
     remaining_guess_count = guess_limit - guess_count
+    # Use of plural noun for 'chances':
     if guess != secret_word and remaining_guess_count!=0 and remaining_guess_count!=1:
         print("Wrong guess, try again. " + str(remaining_guess_count) + " chances left")
+    # Use of singular noun for 'chance':
     if guess != secret_word and remaining_guess_count == 1:
         print("Wrong guess, try again. " + str(remaining_guess_count) + " chance left")
 
