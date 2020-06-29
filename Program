@@ -12,9 +12,9 @@ while guess != secret_word and guess_count < guess_limit:
     if guess_count == 2 and guess != secret_word:
         print("Wrong guess, try again. 1 chance left")
 
-# The user has lost the game!:
+# The user has lost the game:
 if guess_count == 3 and guess != secret_word:
     print("Out of guesses. You lose!")
-# The user has won the game!:
+# The user has won the game:
 elif guess == secret_word:
     print("You guessed the secret word! You win!")
