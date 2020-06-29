@@ -19,5 +19,5 @@ while guess != secret_word and guess_count < guess_limit:
 if guess == secret_word:
     print("You guessed the secret word! You win!")
 # The user has lost the game:
-elif guess_count == guess_limit and guess != secret_word:
+elif guess != secret_word:
     print("Out of guesses. You lose!")
